@@ -13,7 +13,7 @@ class Locators:
     button_personal_account = [By.XPATH, ".// p[text() = 'Личный Кабинет']"]  # Кнопка "Личный кабинет"
     button_profile = [By.XPATH, "//*[@class='Account_link__2ETsJ text text_type_main-medium text_color_inactive Account_link_active__2opc9']"]  # Кнопка "Профиль"
     inscription_Assemble_burger = [By.XPATH, "//*[@class='text text_type_main-large mb-5 mt-10']"]  # Надпись "Соберите бургер"
-    button_Order_Feed = [By.XPATH, "(//*[@class='AppHeader_header__link__3D_hX'])[1]"]
+    button_Order_Feed = [By.XPATH, "(//*[@class='AppHeader_header__link__3D_hX'])[1]"] # Лента заказов
     def __init__(self, driver):
         self.driver = driver
 
