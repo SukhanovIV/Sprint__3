@@ -22,3 +22,7 @@ def test_successful_registration_with_correct_username_and_password(self, exampl
     assert WebDriverWait(driver, 1).until(expected_conditions.visibility_of_element_located((By.XPATH,
                                                                                              "//*[@class='Account_link__2ETsJ text text_type_main-medium text_color_inactive Account_link_active__2opc9']")))
     driver.quit()
+
+    def going_to_the_website(self):
+        self.driver = webdriver.Chrome()
+        self.driver.get('https://stellarburgers.nomoreparties.site/')
