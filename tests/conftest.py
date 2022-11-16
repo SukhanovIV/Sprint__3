@@ -1,6 +1,5 @@
 import pytest
 
-
 class UserRegistration:
     def __init__(self, name, login, password):
         self.name = name
@@ -9,7 +8,7 @@ class UserRegistration:
 
 @pytest.fixture
 def example_correct_user():
-    return UserRegistration(name='Иван', login='IvanSukhanov4015@yandex.ru', password='123456')
+    return UserRegistration(name='Иван', login='IvanSukhanov4026@yandex.ru', password='123456')
 
 @pytest.fixture
 def example_not_correct_user():
