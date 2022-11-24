@@ -12,7 +12,7 @@ class UserRegistration:
 
 @pytest.fixture
 def example_correct_user():
-    return UserRegistration(name='Иван', login='IvanSukhanov3907@yandex.ru', password='123456')
+    return UserRegistration(name='Иван', login='IvanSukhanov3911@yandex.ru', password='123456')
 
 
 @pytest.fixture
@@ -20,7 +20,7 @@ def example_not_correct_user():
     return UserRegistration(name='', login='IvanSukhanov366', password='12345')
 
 
-@pytest.fixture(scope='class')
+@pytest.fixture(scope='function')
 def driver():
     options = Options()
     options.add_argument('--window-size=1920,1080')

@@ -23,7 +23,7 @@ class Locators:
     button_exit = [By.XPATH, "// button[contains(text(), 'Выход')]"]  # Кнопка "Выход"
     button_designer = [By.XPATH, "//p[contains(text(),'Конструктор')]"]  # Кнопка "Конструктор"
     button_order_feed = [By.XPATH, "//p[contains(text(),'Лента Заказов')]"]  # Кнопка "Лента заказов"
-    button_stellar_burgers = [By.XPATH, "(// header / nav[1] / div[1] / a[1] / * [1])]"]  # Кнопка "stellar_burgers"
+    button_stellar_burgers = [By.XPATH, "//*[@class='AppHeader_header__logo__2D0X2']"]  # Кнопка "stellar_burgers"
     button_bread = [By.XPATH, "//span[contains(text(),'Булки')]"]  # Кнопка "Булки"
     button_sauce = [By.XPATH, "//span[contains(text(),'Соусы')]"]  # Кнопка "Соусы"
     button_filling = [By.XPATH, "//span[contains(text(),'Начинки')]"]  # Кнопка "Начинки"
