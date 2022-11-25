@@ -12,7 +12,7 @@ class UserRegistration:
 
 @pytest.fixture
 def example_correct_user():
-    return UserRegistration(name='Иван', login='IvanSukhanov3911@yandex.ru', password='123456')
+    return UserRegistration(name='Иван', login='IvanSukhanov3913@yandex.ru', password='123456')
 
 
 @pytest.fixture

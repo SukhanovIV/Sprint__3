@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support import expected_conditions as ec
 from Locators import Locators
 
 
@@ -14,11 +14,11 @@ class TestRegistration:
         Locators(driver).enter_correct_password_1(example_correct_user)
         Locators(driver).clicking_button_register_2()
         WebDriverWait(driver, 10).until(
-            expected_conditions.visibility_of_element_located((By.XPATH, "//button[contains(text(),'Войти')]")))
+            ec.visibility_of_element_located((By.XPATH, "//button[contains(text(),'Войти')]")))
         Locators(driver).enter_correct_email_2(example_correct_user)
         Locators(driver).enter_correct_password_2(example_correct_user)
         Locators(driver).clicking_button_login_in_1()
-        assert WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(
+        assert WebDriverWait(driver, 10).until(ec.visibility_of_element_located(
             (By.XPATH, "//button[contains(text(),'Оформить заказ')]"))).text == "Оформить заказ"
         driver.quit()
 
@@ -29,7 +29,7 @@ class TestRegistration:
         Locators(driver).enter_correct_email_1(example_correct_user)
         Locators(driver).enter_correct_password_1(example_correct_user)
         Locators(driver).clicking_button_register_2()
-        assert WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(
+        assert WebDriverWait(driver, 10).until(ec.visibility_of_element_located(
             (By.XPATH, "//button[contains(text(),'Зарегистрироваться')]"))).text == "Зарегистрироваться"
         driver.quit()
 
@@ -40,7 +40,7 @@ class TestRegistration:
         Locators(driver).enter_incorrect_email(example_not_correct_user)
         Locators(driver).enter_correct_password_1(example_correct_user)
         Locators(driver).clicking_button_register_2()
-        assert WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(
+        assert WebDriverWait(driver, 10).until(ec.visibility_of_element_located(
             (By.XPATH, "//p[contains(text(),'Такой пользователь уже существует')]"))).text == "Такой пользователь уже существует"
         driver.quit()
 
@@ -51,6 +51,6 @@ class TestRegistration:
         Locators(driver).enter_correct_email_1(example_correct_user)
         Locators(driver).enter_incorrect_password(example_not_correct_user)
         Locators(driver).clicking_button_register_2()
-        assert WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(
+        assert WebDriverWait(driver, 10).until(ec.visibility_of_element_located(
             (By.XPATH, "//p[contains(text(),'Некорректный пароль')]"))).text == "Некорректный пароль"
         driver.quit()
