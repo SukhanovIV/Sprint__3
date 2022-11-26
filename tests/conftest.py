@@ -12,7 +12,7 @@ class UserRegistration:
 
 @pytest.fixture
 def example_correct_user():
-    return UserRegistration(name='Иван', login='IvanSukhanov3913@yandex.ru', password='123456')
+    return UserRegistration(name='Иван', login='IvanSukhanov3914@yandex.ru', password='123456')
 
 
 @pytest.fixture
@@ -24,7 +24,7 @@ def example_not_correct_user():
 def driver():
     options = Options()
     options.add_argument('--window-size=1920,1080')
-    options.add_argument('--headless')
+   # options.add_argument('--headless')
     driver = webdriver.Chrome(options=options)
     driver.get('https://stellarburgers.nomoreparties.site/')
 

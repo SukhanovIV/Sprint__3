@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class Locators:
-    button_login_in_account = [By.XPATH, './/button']  # Кнопка "Войти в аккаунт"
+    button_login_in_account = [By.XPATH, "//button[contains(text(),'Войти в аккаунт')]"]  # Кнопка "Войти в аккаунт"
     button_register_1 = [By.XPATH, ".//a[text()='Зарегистрироваться']"]  # Кнопка "Зарегистрироваться" № 1
     name_entry_button = [By.XPATH,
                          "(//*[@class='text input__textfield text_type_main-default'])[1]"]  # Кнопка ввода "Имени" для регистрации
@@ -15,7 +15,7 @@ class Locators:
     password_entry_button_2 = [By.XPATH,
                                "(//*[@class='text input__textfield text_type_main-default'])[2]"]  # Кнопка ввода "Пароля" для входа
     button_register_2 = [By.XPATH, ".//button[text()='Зарегистрироваться']"]  # Кнопка "Зарегистрироваться" № 2
-    button_login_in_1 = [By.XPATH, "//button[text()='Войти']"]  # Кнопка "Войти" № 1
+    button_login_in_1 = [By.XPATH, "//button[contains(text(),'Войти')]"]  # Кнопка "Войти" № 1
     button_login_in_2 = [By.XPATH, "//a[contains(text(),'Войти')]"]  # Кнопка "Войти" № 2
     button_recover_password = [By.XPATH,
                                "// a[contains(text(), 'Восстановить пароль')]"]  # Кнопка "Восстановить пароль"
@@ -26,7 +26,23 @@ class Locators:
     button_stellar_burgers = [By.XPATH, "//*[@class='AppHeader_header__logo__2D0X2']"]  # Кнопка "stellar_burgers"
     button_bread = [By.XPATH, "//span[contains(text(),'Булки')]"]  # Кнопка "Булки"
     button_sauce = [By.XPATH, "//span[contains(text(),'Соусы')]"]  # Кнопка "Соусы"
-    button_filling = [By.XPATH, "//span[contains(text(),'Начинки')]"]  # Кнопка "Начинки"
+    button_place_an_order = [By.XPATH, "//button[contains(text(),'Оформить заказ')]"]  # Кнопка "Оформить заказ"
+    button_filling = [By.XPATH,
+                      "//span[contains(text(),'Начинки')]"]  # Кнопка "Начинки"
+    title_username_already_exists = [By.XPATH,
+                                     "//p[contains(text(),'Такой пользователь уже существует')]"]  # Надпись "Такой пользователь уже существует"
+    title_invalid_password = [By.XPATH,
+                              "//p[contains(text(),'Некорректный пароль')]"]  # Надпись "Некорректный пароль"
+    title_profile = [By.XPATH, "//a[contains(text(),'Профиль')]"]  # Надпись "Профиль"
+    title_login = [By.XPATH, "//h2[contains(text(),'Вход')]"]  # Надпись "Вход"
+    title_assemble_burger = [By.XPATH, "//h1[contains(text(),'Соберите бургер')]"]  # Надпись "Соберите бургер"
+    branded_sauce_space_sauce = [By.XPATH, "//p[contains(text(),'Соус фирменный Space Sauce')]"]  # Соус "Соус фирменный Space Sauce"
+    sauce_with_antarian_flathead_spikes = [By.XPATH,
+                                           "//p[contains(text(),'Соус с шипами Антарианского плоскоходца')]"]  # Соус "Соус с шипами Антарианского плоскоходца"
+    fluorescent_bread_r2_d3 = [By.XPATH, "//h1[contains(text(),'Соберите бургер')]"]  # Булка "Fluorescent bread R2-D3"
+    beef_meteorite = [By.XPATH, "//p[contains(text(),'Говяжий метеорит (отбивная)')]"]  # Начинка "Говяжий метеорит (отбивная)"
+    fillet_Luminescent_tetraodontimform = [By.XPATH,
+                                           "//p[contains(text(),'Филе Люминесцентного тетраодонтимформа')]"]  # Начинка "Филе Люминесцентного тетраодонтимформа"
 
     def __init__(self, driver):
         self.driver = driver
