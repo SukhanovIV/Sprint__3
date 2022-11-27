@@ -57,6 +57,10 @@ class Locators:
         self.driver.find_element(*self.name_entry_button).send_keys(example_correct_user.name)
         return example_correct_user
 
+    def enter_random_email(self, email):
+        self.driver.find_element(*self.email_entry_button_1).send_keys(email)
+        return email
+
     def enter_correct_email_1(self, example_correct_user):
         self.driver.find_element(*self.email_entry_button_1).send_keys(example_correct_user.login)
         return example_correct_user
@@ -120,6 +124,18 @@ class Locators:
 
     def clicking_button_filling(self):
         self.driver.find_element(*self.button_filling).click()
+
+    def find_branded_sauce_space_sauce(self):
+        element = self.driver.find_element(*self.branded_sauce_space_sauce)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
+
+    def find_fluorescent_bread_r2_d3(self):
+        element = self.driver.find_element(*self.fluorescent_bread_r2_d3)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
+
+    def find_beef_meteorite(self):
+        element = self.driver.find_element(*self.beef_meteorite)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
 
     def correct_login(self, example_correct_user):
         self.enter_correct_email_2(example_correct_user)

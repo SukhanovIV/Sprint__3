@@ -5,20 +5,15 @@ from Locators import Locators
 
 class TestRegistration:
 
-    def test_successful_registration_with_correct_username_and_password(self, driver, example_correct_user):
+    def test_successful_registration_with_correct_username_and_password(self, driver, example_correct_user, email):
         Locators(driver).clicking_button_login_in_account()
         Locators(driver).clicking_button_register_1()
         Locators(driver).enter_correct_name(example_correct_user)
-        Locators(driver).enter_correct_email_1(example_correct_user)
+        Locators(driver).enter_random_email(email)
         Locators(driver).enter_correct_password_1(example_correct_user)
         Locators(driver).clicking_button_register_2()
-        WebDriverWait(driver, 10).until(
-            ec.visibility_of_element_located(Locators.button_login_in_1))
-        Locators(driver).enter_correct_email_2(example_correct_user)
-        Locators(driver).enter_correct_password_2(example_correct_user)
-        Locators(driver).clicking_button_login_in_1()
-        assert WebDriverWait(driver, 10).until(ec.visibility_of_element_located(
-            Locators.button_place_an_order)).text == "Оформить заказ"
+        assert WebDriverWait(driver, 20).until(ec.visibility_of_element_located(
+            Locators.button_login_in_1)).text == "Войти"
 
     def test_unsuccessful_registration_with_empty_name(self, driver, example_correct_user, example_not_correct_user):
         Locators(driver).clicking_button_login_in_account()

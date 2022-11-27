@@ -1,4 +1,5 @@
 import pytest
+from faker import Faker
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
@@ -24,10 +25,14 @@ def example_not_correct_user():
 def driver():
     options = Options()
     options.add_argument('--window-size=1920,1080')
-   # options.add_argument('--headless')
+    options.add_argument('--headless')
     driver = webdriver.Chrome(options=options)
     driver.get('https://stellarburgers.nomoreparties.site/')
-
     yield driver
-
     driver.quit()
+
+
+@pytest.fixture
+def email():
+    fake = Faker()
+    yield fake.email()
